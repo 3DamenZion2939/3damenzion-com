@@ -4,10 +4,245 @@
   <meta charset="utf-8" />
   <meta name="viewport" content="width=device-width, initial-scale=1" />
   <title>3D@MENZION — Media • Radio • Streaming</title>
+  <meta name="description" content="3D@MENZION (pronounced ‘3Dimention’) — Audio, Video, Internet. Home of The Making Noise Show, Spreading The Gospel Everywhere Podcast, WORDis Radio, and 3DTV." />
+  <meta property="og:title" content="3D@MENZION — Media • Radio • Streaming" />
+  <meta property="og:description" content="The central hub for Diego Gomez’s media ecosystem: podcast, radio, IPTV, and creative services." />
+  <meta property="og:type" content="website" />
+  <meta property="og:image" content="/assets/og-image.png" />
+  <meta name="theme-color" content="#0b1220" />
   <link rel="icon" href="/assets/favicon.png" />
+  <style>
+    :root {
+      --bg: #0b1220;
+      --card: #111827;
+      --muted: #94a3b8;
+      --text: #e5e7eb;
+      --brand: #22d3ee;
+      --brand2: #a78bfa;
+      --radius: 18px;
+      --shadow: 0 10px 30px rgba(0,0,0,.35);
+    }
+    @media (prefers-color-scheme: light){
+      :root{ --bg:#f8fafc; --card:#ffffff; --text:#0f172a; --muted:#475569; }
+    }
+    *{ box-sizing: border-box; }
+    html,body{ height:100%; }
+    body{
+      margin:0; font-family: system-ui, -apple-system, Segoe UI, Roboto, Ubuntu, Cantarell, "Helvetica Neue", Arial, "Noto Sans", sans-serif;
+      background: radial-gradient(1200px 700px at 10% 0%, rgba(34,211,238,.15), transparent 60%),
+                  radial-gradient(900px 600px at 90% 10%, rgba(167,139,250,.12), transparent 60%), var(--bg);
+      color:var(--text);
+      line-height:1.6;
+    }
+    .container{ width:min(1120px, 92%); margin-inline:auto; }
+    .grid{ display:grid; gap:18px; }
+    header{ position:sticky; top:0; backdrop-filter: blur(10px); background: rgba(11,18,32,.45); border-bottom:1px solid rgba(229,231,235,.1); z-index:50; }
+    .nav{ display:flex; align-items:center; justify-content:space-between; padding:14px 0; }
+    .brand{ display:flex; align-items:center; gap:12px; text-decoration:none; color:var(--text); font-weight:700; letter-spacing:.3px; }
+    .logo{ width:40px; aspect-ratio:1; border-radius:12px; background:linear-gradient(135deg, var(--brand), var(--brand2)); display:grid; place-items:center; color:#0b1220; font-weight:800; }
+    .pill{ display:inline-flex; align-items:center; gap:8px; border-radius:999px; padding:6px 12px; background: rgba(255,255,255,.03); border:1px solid rgba(229,231,235,.15); color:var(--muted); text-decoration:none; font-size:.92rem; }
+    .pill strong{ color:var(--text); }
+    .hero{ padding:64px 0 32px; }
+    .hero h1{ font-size: clamp(1.8rem, 2.4rem + 1vw, 3.2rem); line-height:1.15; margin:0 0 12px; }
+    .hero p{ color:var(--muted); margin:0 0 22px; max-width:70ch; }
+    .cta{ display:flex; flex-wrap:wrap; gap:12px; }
+    .btn{ display:inline-flex; align-items:center; gap:10px; padding:12px 18px; border-radius:14px; border:1px solid rgba(229,231,235,.2); text-decoration:none; color:var(--text); background: linear-gradient(180deg, rgba(255,255,255,.04), rgba(0,0,0,.08)); box-shadow: var(--shadow); }
+    .btn.primary{ background: linear-gradient(135deg, var(--brand), var(--brand2)); color:#0b1220; border-color: transparent; font-weight:700; }
+    section{ padding:28px 0; }
+    h2{ font-size: clamp(1.4rem, 1.2rem + 1vw, 2rem); margin:0 0 8px; }
+    .sub{ color:var(--muted); margin:0 0 18px; }
+    .cards{ display:grid; grid-template-columns: repeat(12, 1fr); gap:14px; }
+    .card{ grid-column: span 12; background: rgba(255,255,255,.03); border:1px solid rgba(229,231,235,.12); border-radius: var(--radius); padding:18px; box-shadow: var(--shadow); display:grid; grid-template-columns: 62px 1fr; gap:14px; align-items:center; text-decoration: none; color: var(--text); }
+    @media (min-width: 720px){ .card{ grid-column: span 6; } }
+    @media (min-width: 1024px){ .card{ grid-column: span 4; } }
+    .icon{ width:52px; aspect-ratio:1; border-radius:14px; display:grid; place-items:center; background:linear-gradient(135deg, rgba(34,211,238,.15), rgba(167,139,250,.15)); border:1px dashed rgba(229,231,235,.2); }
+    .card h3{ margin:0; font-size:1.05rem; }
+    .card p{ margin:6px 0 0; color:var(--muted); font-size:.98rem; }
+    .service{ background: rgba(255,255,255,.02); border:1px solid rgba(229,231,235,.12); border-radius: var(--radius); padding:18px; }
+    .grid-2{ display:grid; gap:16px; }
+    @media (min-width: 900px){ .grid-2{ grid-template-columns: 1.1fr .9fr; } }
+    form{ display:grid; gap:12px; }
+    input, textarea{ width:100%; padding:12px 14px; border-radius:12px; border:1px solid rgba(229,231,235,.2); background: rgba(255,255,255,.03); color:var(--text); }
+    textarea{ min-height:130px; resize:vertical; }
+    label{ font-size:.95rem; color:var(--muted); }
+    footer{ border-top:1px solid rgba(229,231,235,.1); margin-top:30px; padding:22px 0 48px; color:var(--muted); }
+    .links{ display:flex; flex-wrap:wrap; gap:10px; }
+    .note{ font-size:.9rem; }
+    .hide{ position:absolute; left:-9999px; }
+  </style>
 </head>
 <body>
-  <h1>3D@MENZION — Media Hub</h1>
-  <p>Welcome to the official landing page for 3D@MENZION (3Dimention).</p>
+  <header>
+    <div class="container nav">
+      <a class="brand" href="#home" aria-label="3D@MENZION home">
+        <div class="logo" aria-hidden="true">3D</div>
+        <span>3D@MENZION</span>
+      </a>
+      <a class="pill" href="#contact"><strong>Book</strong> a project</a>
+    </div>
+  </header>
+
+  <main id="home" class="container">
+    <section class="hero">
+      <p class="pill" aria-label="Tagline">Audio · Video · Internet</p>
+      <h1>Media that makes noise — and meaning.</h1>
+      <p>Welcome to the 3D@MENZION hub (pronounced <em>3Dimention</em>): home of <strong>The Making Noise Show</strong>, the <strong>Spreading The Gospel Everywhere</strong> podcast network, <strong>WORDis Radio</strong>, and <strong>3DTV</strong>. Built by Diego Gomez to bring truth to power with excellence in production.</p>
+      <div class="cta">
+        <a class="btn primary" href="https://3damenzion.org" target="_blank" rel="noopener">Visit 3damenzion.org</a>
+        <a class="btn" href="#projects">Explore projects</a>
+        <a class="btn" href="#services">Production services</a>
+      </div>
+    </section>
+
+    <section id="projects">
+      <h2>Featured Projects</h2>
+      <p class="sub">Your ecosystem at a glance. Swap links as needed.</p>
+      <div class="cards">
+        <a class="card" href="#podcast" aria-label="The Making Noise Show">
+          <div class="icon" aria-hidden="true">🎙️</div>
+          <div>
+            <h3>The Making Noise Show</h3>
+            <p>Weekly episodes bringing truth to power with biblical insight and real talk.</p>
+          </div>
+        </a>
+        <a class="card" href="https://www.3damenzion.us" target="_blank" rel="noopener" aria-label="WORDis Radio">
+          <div class="icon" aria-hidden="true">📻</div>
+          <div>
+            <h3>WORDis Radio – The Inspiration Station</h3>
+            <p>Stream Gospel, Christian Rap/Rock, Salsa, Merengue, Oldies, and Jazz — anywhere.</p>
+          </div>
+        </a>
+        <a class="card" href="#3dtv" aria-label="3DTV IPTV">
+          <div class="icon" aria-hidden="true">📺</div>
+          <div>
+            <h3>3DTV — Streaming</h3>
+            <p>Watch on phones, tablets, and PCs. Free 24-hour trial coming soon.</p>
+          </div>
+        </a>
+        <a class="card" href="https://youtube.com" target="_blank" rel="noopener" aria-label="YouTube">
+          <div class="icon" aria-hidden="true">▶️</div>
+          <div>
+            <h3>YouTube</h3>
+            <p>Faceless videos, shorts, and full-length episodes. Subscribe and share.</p>
+          </div>
+        </a>
+        <a class="card" href="https://open.spotify.com" target="_blank" rel="noopener" aria-label="Spotify Podcast">
+          <div class="icon" aria-hidden="true">🎧</div>
+          <div>
+            <h3>Podcast on Spotify/Apple</h3>
+            <p>Catch every message on your favorite platform — audio first, visuals next.</p>
+          </div>
+        </a>
+        <a class="card" href="#press" aria-label="Press & bookings">
+          <div class="icon" aria-hidden="true">📰</div>
+          <div>
+            <h3>Press & Bookings</h3>
+            <p>Radio interviews, speaking, production consults — let’s work.</p>
+          </div>
+        </a>
+      </div>
+    </section>
+
+    <section id="services">
+      <h2>Production & Consulting</h2>
+      <p class="sub">From script to stream — turnkey podcasting, radio ads, voiceovers, and social video.</p>
+      <div class="grid-2">
+        <div class="service">
+          <ul>
+            <li>Podcast & radio production (Adobe Audition, ElevenLabs, SFX library)</li>
+            <li>Ad copy & creative for Facebook/Instagram/YouTube</li>
+            <li>Text-to-speech pipelines for CapCut/InVideo</li>
+            <li>Graphics: covers, thumbnails, banners, episode art</li>
+            <li>Show design: intros/outros, jingles, station IDs</li>
+            <li>IPTV launch playbooks (apps, trials, promos)</li>
+          </ul>
+        </div>
+        <div class="service">
+          <h3>Start a project</h3>
+          <p class="sub">Use the form below — we’ll get back to you.</p>
+          <!-- Netlify form -->
+          <form name="contact" method="POST" data-netlify="true" netlify-honeypot="bot-field">
+            <input type="hidden" name="form-name" value="contact">
+            <p class="hide"><label>Don’t fill this out if you’re human: <input name="bot-field" /></label></p>
+            <label for="name">Name</label>
+            <input id="name" name="name" required placeholder="Your full name" />
+            <label for="email">Email</label>
+            <input id="email" name="email" type="email" required placeholder="you@example.com" />
+            <label for="msg">Project details</label>
+            <textarea id="msg" name="message" placeholder="Tell us what you want to make…"></textarea>
+            <button class="btn primary" type="submit">Send request</button>
+          </form>
+        </div>
+      </div>
+    </section>
+
+    <section id="podcast">
+      <h2>The Making Noise Show</h2>
+      <p class="sub">New episodes every Sunday. Bringing truth to power with biblical scripture and a touch of real talk.</p>
+      <div class="grid" style="grid-template-columns: 1fr; gap:14px;">
+        <div class="service">
+          <h3>Latest Series</h3>
+          <ul>
+            <li>Signs in the Skies — From Prophecy to Politics</li>
+            <li>The 400 Club — God’s Timing</li>
+            <li>The Fifth 400 — Are We Living the Prophecy?</li>
+          </ul>
+          <div class="cta" style="margin-top:10px;">
+            <a class="btn" href="#" aria-label="Listen on Spotify">Listen now</a>
+            <a class="btn" href="#" aria-label="Watch on YouTube">Watch clips</a>
+          </div>
+        </div>
+      </div>
+    </section>
+
+    <section id="3dtv">
+      <h2>3DTV — Streaming</h2>
+      <p class="sub">Your IPTV launchpad. Add plan details or a trial form here when ready.</p>
+      <div class="service">
+        <p>We’re building a streaming experience you can watch anywhere. Want early access?</p>
+        <!-- Netlify form -->
+        <form name="3dtv-interest" method="POST" data-netlify="true" netlify-honeypot="bot-field">
+          <input type="hidden" name="form-name" value="3dtv-interest">
+          <p class="hide"><label>Don’t fill this out if you’re human: <input name="bot-field" /></label></p>
+          <label for="email2">Email</label>
+          <input id="email2" name="email" type="email" required placeholder="you@example.com" />
+          <button class="btn" type="submit">Notify me</button>
+        </form>
+      </div>
+    </section>
+
+    <section id="press">
+      <h2>Press & Bookings</h2>
+      <p class="sub">Need a one-sheet or station kit? We’ve got you.</p>
+      <div class="service">
+        <div class="cta">
+          <a class="btn" href="#" aria-label="Download media kit (PDF)">Download media kit (PDF)</a>
+          <a class="btn" href="#contact">Request an interview</a>
+        </div>
+      </div>
+    </section>
+
+    <section id="contact">
+      <h2>Contact</h2>
+      <p class="sub">Email: <a href="mailto:3damenzion@gmail.com">3damenzion@gmail.com</a> · Sundays 6:30–7:00 AM on WHAT 1340 AM / La Kalle 99.9 FM</p>
+      <div class="links">
+        <a class="pill" href="#">Facebook</a>
+        <a class="pill" href="#">Instagram</a>
+        <a class="pill" href="#">Threads</a>
+        <a class="pill" href="#">YouTube</a>
+        <a class="pill" href="#">Spotify</a>
+        <a class="pill" href="#">Apple Podcasts</a>
+      </div>
+      <p class="note">© <span id="yr"></span> 3D@MENZION Media. All rights reserved.</p>
+    </section>
+  </main>
+
+  <footer>
+    <div class="container">
+      <p class="note">Pronunciation: 3D@MENZION → “3Dimention”. The @ represents the ‘A’ in amen. Podcast is a secondary brand element to the 15+ years of audio/video/internet work.</p>
+    </div>
+  </footer>
+
+  <script>document.getElementById('yr').textContent = new Date().getFullYear();</script>
 </body>
 </html>
