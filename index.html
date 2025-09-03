@@ -36,21 +36,25 @@
     }
     .container{ width:min(1120px, 92%); margin-inline:auto; }
     .grid{ display:grid; gap:18px; }
+
     header{ position:sticky; top:0; backdrop-filter: blur(10px); background: rgba(11,18,32,.45); border-bottom:1px solid rgba(229,231,235,.1); z-index:50; }
     .nav{ display:flex; align-items:center; justify-content:space-between; padding:14px 0; }
     .brand{ display:flex; align-items:center; gap:12px; text-decoration:none; color:var(--text); font-weight:700; letter-spacing:.3px; }
     .logo{ width:40px; aspect-ratio:1; border-radius:12px; background:linear-gradient(135deg, var(--brand), var(--brand2)); display:grid; place-items:center; color:#0b1220; font-weight:800; }
     .pill{ display:inline-flex; align-items:center; gap:8px; border-radius:999px; padding:6px 12px; background: rgba(255,255,255,.03); border:1px solid rgba(229,231,235,.15); color:var(--muted); text-decoration:none; font-size:.92rem; }
     .pill strong{ color:var(--text); }
+
     .hero{ padding:64px 0 32px; }
     .hero h1{ font-size: clamp(1.8rem, 2.4rem + 1vw, 3.2rem); line-height:1.15; margin:0 0 12px; }
     .hero p{ color:var(--muted); margin:0 0 22px; max-width:70ch; }
     .cta{ display:flex; flex-wrap:wrap; gap:12px; }
     .btn{ display:inline-flex; align-items:center; gap:10px; padding:12px 18px; border-radius:14px; border:1px solid rgba(229,231,235,.2); text-decoration:none; color:var(--text); background: linear-gradient(180deg, rgba(255,255,255,.04), rgba(0,0,0,.08)); box-shadow: var(--shadow); }
     .btn.primary{ background: linear-gradient(135deg, var(--brand), var(--brand2)); color:#0b1220; border-color: transparent; font-weight:700; }
+
     section{ padding:28px 0; }
     h2{ font-size: clamp(1.4rem, 1.2rem + 1vw, 2rem); margin:0 0 8px; }
     .sub{ color:var(--muted); margin:0 0 18px; }
+
     .cards{ display:grid; grid-template-columns: repeat(12, 1fr); gap:14px; }
     .card{ grid-column: span 12; background: rgba(255,255,255,.03); border:1px solid rgba(229,231,235,.12); border-radius: var(--radius); padding:18px; box-shadow: var(--shadow); display:grid; grid-template-columns: 62px 1fr; gap:14px; align-items:center; text-decoration: none; color: var(--text); }
     @media (min-width: 720px){ .card{ grid-column: span 6; } }
@@ -58,13 +62,7 @@
     .icon{ width:52px; aspect-ratio:1; border-radius:14px; display:grid; place-items:center; background:linear-gradient(135deg, rgba(34,211,238,.15), rgba(167,139,250,.15)); border:1px dashed rgba(229,231,235,.2); }
     .card h3{ margin:0; font-size:1.05rem; }
     .card p{ margin:6px 0 0; color:var(--muted); font-size:.98rem; }
-    .service{ background: rgba(255,255,255,.02); border:1px solid rgba(229,231,235,.12); border-radius: var(--radius); padding:18px; }
-    .grid-2{ display:grid; gap:16px; }
-    @media (min-width: 900px){ .grid-2{ grid-template-columns: 1.1fr .9fr; } }
-    form{ display:grid; gap:12px; }
-    input, textarea{ width:100%; padding:12px 14px; border-radius:12px; border:1px solid rgba(229,231,235,.2); background: rgba(255,255,255,.03); color:var(--text); }
-    textarea{ min-height:130px; resize:vertical; }
-    label{ font-size:.95rem; color:var(--muted); }
+
     footer{ border-top:1px solid rgba(229,231,235,.1); margin-top:30px; padding:22px 0 48px; color:var(--muted); }
     .links{ display:flex; flex-wrap:wrap; gap:10px; }
     .note{ font-size:.9rem; }
@@ -83,6 +81,7 @@
   </header>
 
   <main id="home" class="container">
+    <!-- Hero -->
     <section class="hero">
       <p class="pill" aria-label="Tagline">Audio · Video · Internet</p>
       <h1>Media that makes noise — and meaning.</h1>
@@ -90,159 +89,130 @@
       <div class="cta">
         <a class="btn primary" href="https://3damenzion.org" target="_blank" rel="noopener">Visit 3damenzion.org</a>
         <a class="btn" href="#projects">Explore projects</a>
-        <a class="btn" href="#services">Production services</a>
+        <a class="btn" href="#streams">Listen live</a>
       </div>
     </section>
 
+    <!-- Projects -->
     <section id="projects">
       <h2>Featured Projects</h2>
       <p class="sub">Your ecosystem at a glance. Swap links as needed.</p>
       <div class="cards">
-        <a class="card" href="#podcast" aria-label="The Making Noise Show">
-          <div class="icon" aria-hidden="true">🎙️</div>
+        <a class="card" href="https://www.youtube.com/@diegogomez6232" target="_blank" rel="noopener" aria-label="YouTube">
+          <div class="icon" aria-hidden="true">▶️</div>
           <div>
-            <h3>The Making Noise Show</h3>
-            <p>Weekly episodes bringing truth to power with biblical insight and real talk.</p>
+            <h3>YouTube Channel</h3>
+            <p>Watch faceless videos, shorts, and full‑length episodes.</p>
           </div>
         </a>
         <a class="card" href="https://www.3damenzion.us" target="_blank" rel="noopener" aria-label="WORDis Radio">
           <div class="icon" aria-hidden="true">📻</div>
           <div>
-            <h3>WORDis Radio – The Inspiration Station</h3>
-            <p>Stream Gospel, Christian Rap/Rock, Salsa, Merengue, Oldies, and Jazz — anywhere.</p>
+            <h3>WORDis Radio</h3>
+            <p>The Inspiration Station — Gospel, Jazz, Oldies, Christian Rap/Rock, Salsa, Merengue.</p>
           </div>
         </a>
-        <a class="card" href="#3dtv" aria-label="3DTV IPTV">
-          <div class="icon" aria-hidden="true">📺</div>
-          <div>
-            <h3>3DTV — Streaming</h3>
-            <p>Watch on phones, tablets, and PCs. Free 24-hour trial coming soon.</p>
-          </div>
-        </a>
-        <a class="card" href="https://youtube.com" target="_blank" rel="noopener" aria-label="YouTube">
-          <div class="icon" aria-hidden="true">▶️</div>
-          <div>
-            <h3>YouTube</h3>
-            <p>Faceless videos, shorts, and full-length episodes. Subscribe and share.</p>
-          </div>
-        </a>
-        <a class="card" href="https://open.spotify.com" target="_blank" rel="noopener" aria-label="Spotify Podcast">
+        <a class="card" href="https://soundcloud.com/3damenzion/tracks" target="_blank" rel="noopener" aria-label="SoundCloud Podcast">
           <div class="icon" aria-hidden="true">🎧</div>
           <div>
-            <h3>Podcast on Spotify/Apple</h3>
-            <p>Catch every message on your favorite platform — audio first, visuals next.</p>
+            <h3>Podcast on SoundCloud</h3>
+            <p>Listen to tracks and episodes hosted on SoundCloud.</p>
           </div>
         </a>
-        <a class="card" href="#press" aria-label="Press & bookings">
-          <div class="icon" aria-hidden="true">📰</div>
+        <a class="card" href="https://open.spotify.com/show/2aHMYyeh8TKGiQ4Jm87eE0?flow_ctx=cc6d98ae-58c3-4b72-aef5-8408ee160245%3A1756933506" target="_blank" rel="noopener" aria-label="Spotify Podcast">
+          <div class="icon" aria-hidden="true">🎶</div>
           <div>
-            <h3>Press & Bookings</h3>
-            <p>Radio interviews, speaking, production consults — let’s work.</p>
+            <h3>Podcast on Spotify</h3>
+            <p>Follow and stream episodes directly on Spotify.</p>
           </div>
         </a>
       </div>
     </section>
 
-    <section id="services">
-      <h2>Production & Consulting</h2>
-      <p class="sub">From script to stream — turnkey podcasting, radio ads, voiceovers, and social video.</p>
-      <div class="grid-2">
-        <div class="service">
-          <ul>
-            <li>Podcast & radio production (Adobe Audition, ElevenLabs, SFX library)</li>
-            <li>Ad copy & creative for Facebook/Instagram/YouTube</li>
-            <li>Text-to-speech pipelines for CapCut/InVideo</li>
-            <li>Graphics: covers, thumbnails, banners, episode art</li>
-            <li>Show design: intros/outros, jingles, station IDs</li>
-            <li>IPTV launch playbooks (apps, trials, promos)</li>
-          </ul>
+    <!-- Live Streams -->
+    <section id="streams">
+      <h2>Live Streams</h2>
+      <p class="sub">Listen live or visit each station's Facebook page.</p>
+      <div class="cards">
+        <!-- WORDis Radio -->
+        <div class="card">
+          <div class="icon" aria-hidden="true">📻</div>
+          <div>
+            <h3>WORDis Radio — The Inspiration Station</h3>
+            <p>Gospel · Jazz · Oldies · Christian Rap/Rock · Salsa · Merengue.</p>
+            <div class="cta">
+              <a class="btn" href="https://rdo.to/WORD" target="_blank" rel="noopener">🎧 Listen now</a>
+              <a class="btn" href="https://www.facebook.com/profile.php?id=100063567428906#" target="_blank" rel="noopener">Facebook Page</a>
+            </div>
+          </div>
         </div>
-        <div class="service">
-          <h3>Start a project</h3>
-          <p class="sub">Use the form below — we’ll get back to you.</p>
-          <!-- Netlify form -->
-          <form name="contact" method="POST" data-netlify="true" netlify-honeypot="bot-field">
-            <input type="hidden" name="form-name" value="contact">
-            <p class="hide"><label>Don’t fill this out if you’re human: <input name="bot-field" /></label></p>
-            <label for="name">Name</label>
-            <input id="name" name="name" required placeholder="Your full name" />
-            <label for="email">Email</label>
-            <input id="email" name="email" type="email" required placeholder="you@example.com" />
-            <label for="msg">Project details</label>
-            <textarea id="msg" name="message" placeholder="Tell us what you want to make…"></textarea>
-            <button class="btn primary" type="submit">Send request</button>
-          </form>
+        <!-- Radio Vida -->
+        <div class="card">
+          <div class="icon" aria-hidden="true">📡</div>
+          <div>
+            <h3>Radio Vida</h3>
+            <p>Spanish Christian Programming — uplifting messages & music.</p>
+            <div class="cta">
+              <a class="btn" href="https://rdo.to/RADVIDA" target="_blank" rel="noopener">🎧 Listen now</a>
+              <a class="btn" href="https://www.facebook.com/profile.php?id=100057423791106#" target="_blank" rel="noopener">Facebook Page</a>
+            </div>
+          </div>
         </div>
-      </div>
-    </section>
-
-    <section id="podcast">
-      <h2>The Making Noise Show</h2>
-      <p class="sub">New episodes every Sunday. Bringing truth to power with biblical scripture and a touch of real talk.</p>
-      <div class="grid" style="grid-template-columns: 1fr; gap:14px;">
-        <div class="service">
-          <h3>Latest Series</h3>
-          <ul>
-            <li>Signs in the Skies — From Prophecy to Politics</li>
-            <li>The 400 Club — God’s Timing</li>
-            <li>The Fifth 400 — Are We Living the Prophecy?</li>
-          </ul>
-          <div class="cta" style="margin-top:10px;">
-            <a class="btn" href="#" aria-label="Listen on Spotify">Listen now</a>
-            <a class="btn" href="#" aria-label="Watch on YouTube">Watch clips</a>
+        <!-- UNIQ Net -->
+        <div class="card">
+          <div class="icon" aria-hidden="true">🎶</div>
+          <div>
+            <h3>UNIQ Net</h3>
+            <p>Unique Christian Network — diverse shows & inspiring music.</p>
+            <div class="cta">
+              <a class="btn" href="https://rdo.to/UNIQ" target="_blank" rel="noopener">🎧 Listen now</a>
+              <a class="btn" href="https://www.facebook.com/profile.php?id=100063807983494#" target="_blank" rel="noopener">Facebook Page</a>
+            </div>
           </div>
         </div>
       </div>
     </section>
 
-    <section id="3dtv">
-      <h2>3DTV — Streaming</h2>
-      <p class="sub">Your IPTV launchpad. Add plan details or a trial form here when ready.</p>
-      <div class="service">
-        <p>We’re building a streaming experience you can watch anywhere. Want early access?</p>
-        <!-- Netlify form -->
-        <form name="3dtv-interest" method="POST" data-netlify="true" netlify-honeypot="bot-field">
-          <input type="hidden" name="form-name" value="3dtv-interest">
-          <p class="hide"><label>Don’t fill this out if you’re human: <input name="bot-field" /></label></p>
-          <label for="email2">Email</label>
-          <input id="email2" name="email" type="email" required placeholder="you@example.com" />
-          <button class="btn" type="submit">Notify me</button>
-        </form>
-      </div>
-    </section>
-
+    <!-- Press / one‑sheet link -->
     <section id="press">
       <h2>Press & Bookings</h2>
-      <p class="sub">Need a one-sheet or station kit? We’ve got you.</p>
-      <div class="service">
-        <div class="cta">
-          <a class="btn" href="#" aria-label="Download media kit (PDF)">Download media kit (PDF)</a>
-          <a class="btn" href="#contact">Request an interview</a>
-        </div>
+      <p class="sub">Download the one‑sheet or request an interview.</p>
+      <div class="cta">
+        <a class="btn" href="/assets/3DAMENZION_Media_Kit.pdf" aria-label="Download media kit (PDF)" target="_blank" rel="noopener">Download Media Kit (PDF)</a>
+        <a class="btn" href="#contact">Request an interview</a>
       </div>
     </section>
 
+    <!-- Contact -->
     <section id="contact">
-      <h2>Contact</h2>
-      <p class="sub">Email: <a href="mailto:3damenzion@gmail.com">3damenzion@gmail.com</a> · Sundays 6:30–7:00 AM on WHAT 1340 AM / La Kalle 99.9 FM</p>
+      <h2>Contact & Social Links</h2>
+      <p class="sub">Email: <a href="mailto:3damenzion@gmail.com">3damenzion@gmail.com</a></p>
       <div class="links">
-        <a class="pill" href="#">Facebook</a>
-        <a class="pill" href="#">Instagram</a>
-        <a class="pill" href="#">Threads</a>
-        <a class="pill" href="#">YouTube</a>
-        <a class="pill" href="#">Spotify</a>
-        <a class="pill" href="#">Apple Podcasts</a>
+        <a class="pill" href="https://www.youtube.com/@diegogomez6232" target="_blank" rel="noopener">YouTube</a>
+        <a class="pill" href="https://x.com/3damenzion" target="_blank" rel="noopener">X (Twitter)</a>
+        <a class="pill" href="https://www.facebook.com/diegodelamega/" target="_blank" rel="noopener">Facebook</a>
+        <a class="pill" href="https://www.linkedin.com/in/diego-gomez-45809834/" target="_blank" rel="noopener">LinkedIn</a>
+        <a class="pill" href="https://bsky.app/profile/3damenzion.bsky.social" target="_blank" rel="noopener">Bluesky</a>
+        <a class="pill" href="https://3damenzion.wordpress.com/" target="_blank" rel="noopener">WordPress</a>
+        <a class="pill" href="https://3damenzion.blog" target="_blank" rel="noopener">Tumblr</a>
+        <a class="pill" href="https://soundcloud.com/3damenzion/tracks" target="_blank" rel="noopener">SoundCloud</a>
+        <a class="pill" href="https://fortress2939.blogspot.com/" target="_blank" rel="noopener">Blogger</a>
+        <a class="pill" href="https://www.facebook.com/profile.php?id=100063567428906#" target="_blank" rel="noopener">WORDis FB</a>
+        <a class="pill" href="https://www.facebook.com/profile.php?id=100057423791106#" target="_blank" rel="noopener">Radio Vida FB</a>
+        <a class="pill" href="https://www.facebook.com/profile.php?id=100063807983494#" target="_blank" rel="noopener">UNIQ NET FB</a>
+        <a class="pill" href="https://www.facebook.com/profile.php?id=61569458752373#" target="_blank" rel="noopener">ROK Ministry FB</a>
       </div>
-      <p class="note">© <span id="yr"></span> 3D@MENZION Media. All rights reserved.</p>
+      <p class="note">© <span id="yr"></span> 3D@MENZION Media. Pronunciation: 3D@MENZION → “3Dimention”. The @ represents the ‘A’ in amen.</p>
     </section>
   </main>
 
   <footer>
     <div class="container">
-      <p class="note">Pronunciation: 3D@MENZION → “3Dimention”. The @ represents the ‘A’ in amen. Podcast is a secondary brand element to the 15+ years of audio/video/internet work.</p>
+      <p class="note">Built with love and excellence. All rights reserved.</p>
     </div>
   </footer>
 
   <script>document.getElementById('yr').textContent = new Date().getFullYear();</script>
 </body>
 </html>
+
