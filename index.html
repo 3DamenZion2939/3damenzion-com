@@ -65,6 +65,7 @@
     footer{ border-top:1px solid rgba(229,231,235,.1); margin-top:30px; padding:22px 0 48px; color:var(--muted); }
     .links{ display:flex; flex-wrap:wrap; gap:10px; }
     .note{ font-size:.9rem; }
+    .logo-img{ width:52px; height:auto; border-radius:10px; display:block; }
   </style>
 </head>
 <body>
@@ -99,9 +100,10 @@
           <div class="icon" aria-hidden="true">▶️</div>
           <div>
             <h3>YouTube Channel</h3>
-            <p>Watch faceless videos, shorts, and full‑length episodes.</p>
+            <p>Watch faceless videos, shorts, and full-length episodes.</p>
           </div>
         </a>
+
         <a class="card" href="https://www.3damenzion.us" target="_blank" rel="noopener" aria-label="WORDis Radio">
           <div class="icon" aria-hidden="true">📻</div>
           <div>
@@ -109,6 +111,7 @@
             <p>The Inspiration Station — Gospel, Jazz, Oldies, Christian Rap/Rock, Salsa, Merengue.</p>
           </div>
         </a>
+
         <a class="card" href="https://soundcloud.com/3damenzion/tracks" target="_blank" rel="noopener" aria-label="SoundCloud Podcast">
           <div class="icon" aria-hidden="true">🎧</div>
           <div>
@@ -116,6 +119,26 @@
             <p>Listen to tracks and episodes hosted on SoundCloud.</p>
           </div>
         </a>
+
+        <!-- Radio Show card -->
+        <div class="card">
+          <div class="icon" aria-hidden="true">
+            <img src="/assets/lakalle-logo.png" alt="La Kalle 99.9 FM" class="logo-img" />
+          </div>
+          <div>
+            <h3>Radio Show — WHAT 1340 AM / La Kalle 99.9 FM</h3>
+            <p>Every Sunday 6:30–7:00 AM — listen live from anywhere.</p>
+          </div>
+        </div>
+
+        <!-- Tiny built-in player (outside the card so the layout stays compact) -->
+        <div style="grid-column: span 12; margin:10px 0 20px;">
+          <audio controls preload="none" style="width:100%; max-width:360px; border-radius:8px;">
+            <source src="https://playerservices.streamtheworld.com/api/livestream-redirect/WHAT_W260CZAAC.aac" type="audio/aac" />
+            Your browser doesn’t support the audio element.
+          </audio>
+        </div>
+
         <a class="card" href="https://open.spotify.com/show/2aHMYyeh8TKGiQ4Jm87eE0?flow_ctx=cc6d98ae-58c3-4b72-aef5-8408ee160245%3A1756933506" target="_blank" rel="noopener" aria-label="Spotify Podcast">
           <div class="icon" aria-hidden="true">🎶</div>
           <div>
@@ -123,24 +146,7 @@
             <p>Follow and stream episodes directly on Spotify.</p>
           </div>
         </a>
-<div class="card">
-  <div class="icon" aria-hidden="true">
-    <img src="/assets/lakalle-logo.png" alt="La Kalle 99.9 FM" class="logo-img" />
-  </div>
-  <div>
-    <h3>Radio Show — WHAT 1340 AM / La Kalle 99.9 FM</h3>
-    <p>Every Sunday 6:30–7:00 AM — listen live from anywhere.</p>
-  </div>
-</div>
 
-<!-- Tiny built-in player under the card -->
-<div style="margin:10px 0 20px;">
-  <audio controls preload="none" style="width:100%; max-width:360px; border-radius:8px;">
-    <source src="https://playerservices.streamtheworld.com/api/livestream-redirect/WHAT_W260CZAAC.aac" type="audio/aac" />
-    Your browser doesn’t support the audio element.
-  </audio>
-</div>
-</div>
         <a class="card" href="https://fortress2939.blogspot.com/p/3dtv.html" target="_blank" rel="noopener" aria-label="3DTV Info">
           <div class="icon" aria-hidden="true">📺</div>
           <div>
@@ -154,7 +160,7 @@
     <!-- Press -->
     <section id="press">
       <h2>Press & Bookings</h2>
-      <p class="sub">Download the one‑sheet or request an interview.</p>
+      <p class="sub">Download the one-sheet or request an interview.</p>
       <div class="cta">
         <a class="btn" href="/assets/3DAMENZION_Media_Kit.pdf" aria-label="Download media kit (PDF)" target="_blank" rel="noopener">Download Media Kit (PDF)</a>
         <a class="btn" href="#contact">Request an interview</a>
